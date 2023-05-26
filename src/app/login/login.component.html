@@ -1,0 +1,16 @@
+<h2 class="text-center mt-3">Login page</h2>
+    <form class="bg-light border container mt-3 p-5 w-50" action="">
+        <div class="p-2 mt-2" class="a1">
+        <input (change)="acnoChange($event)" class="form-control" type="text"[placeholder]="pdata">
+        </div>
+        <div class="p-2 mt-2">
+            <input #psw formControlName="psw" class="form-control" type="password" placeholder="enter password">
+        </div>
+        <div class="p-2 mt-2 text-center">
+            <button (click)="login(psw)" type="button" class="btn btn-success w-50">Login</button>
+        </div>
+        <div class="text-center">
+        <a style="text-decoration: none;"class="fs-5" href="newac.html" routerLink="register">create account</a>
+    </div>
+    </form>
+    <h1>{{data}}</h1>

@@ -1,0 +1,15 @@
+h1{
+    color: blue;
+    background-color: wheat;
+    width: 25%;
+}
+.dom{
+    width: 80%;
+    background-color: rgb(52, 52, 185);
+    border-radius: 50px;
+}
+@media (max-width:400px){
+    .dom{
+        width: 100%;
+    }
+}
