@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +8,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
+
+// export class LoginComponent {
   data="happy banking with us"
   pdata="enter acno"
-  login(a:any){
-    alert('login clicked')
-  }
-  acnoChange(event:any){
-    console.log(event.target.value);
+
+  serviceData:any
+
+// home page call chayn
+constructor(private rout:Router,private ds:DataService){}
+
+  ngOnInit():void{
+     this.serviceData=this.ds.sData
+     console.log(this.serviceData);
+     this.ds.smethod()
+     
+  }  
+
+
+  login(){
+    // console.log(a.value);
     
+    // alert('login clicked')
+    this.rout.navigateByUrl('home')
   }
 
 }

@@ -3,18 +3,18 @@
     <form class="container mt-3 w-50" action="">
         <div class="p-2 ">
             <h6 class="text-center">Create New Account</h6>
-        <input id="u1" class="form-control" type="text"id="s1"placeholder="enter acno">
+        <input id="u1" [(ngModel)]="acno" name="acn" class="form-control" type="text"id="s1"placeholder="enter acno">
         </div>
         <div class="p-2 mt-2">
-            <input id="a1"class="form-control" type="text" id="a1"placeholder="user name">
+            <input id="u2" [(ngModel)]="uname" name="una" class="form-control" type="text" id="a1"placeholder="user name">
         </div>
         <div class="p-2 mt-2">
-            <input id="p1"class="form-control" type="password" id="a1"placeholder="enter password">
+            <input id="u3" [(ngModel)]="psw1" name="ps" class="form-control" type="password" id="a1"placeholder="enter password">
         </div>
         <div class="p-2 mt-2">
-            <input id="cp1"class="form-control" type="password" id="a1"placeholder="confirm password">
+            <input id="u4" [(ngModel)]="cpsw" name="cps" class="form-control" type="password" id="a1"placeholder="confirm password">
         </div>
         <div class="p-2 mt-2 text-center">
-            <button type="submit"class="btn btn-success w-40">sing up</button>
+            <button (click)="signup()" type="submit"class="btn btn-success w-40">sign up</button>
         </div>
     </form>
