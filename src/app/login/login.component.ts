@@ -17,22 +17,37 @@ export class LoginComponent implements OnInit {
 
   serviceData:any
 
+acno:any
+psw:any
+
+
+
 // home page call chayn
 constructor(private rout:Router,private ds:DataService){}
 
   ngOnInit():void{
-     this.serviceData=this.ds.sData
-     console.log(this.serviceData);
-     this.ds.smethod()
      
   }  
 
 
   login(){
-    // console.log(a.value);
+    var acno=this.acno
+    var psw=this.psw
+    // this.rout.navigateByUrl('home')
+
     
-    // alert('login clicked')
-    this.rout.navigateByUrl('home')
+    // console.log(this.acno);
+    // console.log(this.psw);
+
+
+    this.ds.login(acno,psw).subscribe((result:any)=>{
+      alert(result.message)
+      this.rout.navigateByUrl('home')
+    },
+    result=>{
+      alert(result.error.message)
+    }
+    )
   }
 
 }
